@@ -7,7 +7,7 @@ pipeline {
                 echo 'Waiting for service to initialize...' 
                 sleep time: 180, unit: 'SECONDS'
                 script {
-                    sh '''docker pull chontipanpepe/my-image:main'''
+                    sh '''docker pull intaxse67/intaninbuild01:main'''
                 }
             }
         }
@@ -21,11 +21,12 @@ pipeline {
                         docker restart se67
                     else
                         echo "Container 'se67' not found."
-                        docker run --rm -p 3000:3000 --name se67 -d chontipanpepe/my-image:main
+                        docker run --rm -p 3000:3000 --name se67 -d intaxse67/intaninbuild01:main
                     fi
                     '''
                 }
             }
         }
     }
+
 }
